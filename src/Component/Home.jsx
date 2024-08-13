@@ -55,10 +55,17 @@ const Home = () => {
     [img25, img26, img27, img28],
     [img29, img30, img31, img32],
   ];
+  const icons = [
+    { icon: img16, title: "Ateliers", description: "Qui vont nous permettre d'échanger, de débattre, de proposer, de co-créer et de valider." },
+    { icon: img15, title: "Figjam", description: "Pour itérer sur votre projet, Figjam est un grand tableau blanc digital : Brainstorming, idées.. vous allez adorer" },
+    { icon: img14, title: "Figma", description: "Pour imaginer ensemble le design et l'expérience de votre projet, Figma est l'outil que nous privilégions." },
+    { icon: img12, title: "Développement", description: "Pour développer vos sites et applications nous favorisons : Webflow, Bubble, Adalo, Shopify et Wordpress." },
+    { icon: img13, title: "Asana", description: "Pour la gestion de votre projet : planning, tâches, ticketing, gestion d'équipe, Asana est un indispensable." }
+  ];
 
   return (
     <div>
-      <div className="flex flex-col w-full h-screen bg-black text-white mt-2 p-8">
+      <div className="flex flex-col w-full h-screen bg-black text-white mt-2 p-8 overflow-hidden">
         <div className="flex flex-wrap justify-between items-center h-full">
           <div className="my-6 w-full sm:w-1/2 p-4">
             <p className="text-gray-400 font-bold">Branding | Image Making</p>
@@ -81,7 +88,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col w-full h-32 mt-2">
+      <div className="flex flex-col w-full h-32 mt-2 overflow-hidden">
         <div className="mx-12">
           <ul className="flex flex-wrap justify-between item-center h-full ">
             <li>
@@ -103,7 +110,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mt-2 mx-10 w-full">
+      <div className="flex flex-col mt-2 mx-10 w-full overflow-hidden">
         <h1 className="text-gray-800 font-bold text-4xl text-center mt-10">
           Latest Work
         </h1>
@@ -124,92 +131,32 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="p-24 mt-16 ">
-        <div className="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white flex items-center justify-center rounded-2xl shadow-2xl ">
-          <div className="p-8 max-w-4xl mt-6 mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold mb-4">Notre méthodologie</h1>
-              <p className="text-lg">
-                Créer une équipe pour votre projet c'est bien, avoir une
-                organisation sans faille c'est mieux. Pourquoi ? Pour gagner en
-                productivité, en temps et en ébullition d'idées.
+      <div className="p-8 mx-6 mt-16 overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white flex items-center justify-center rounded-2xl shadow-2xl">
+          <div className="p-4 md:p-8 max-w-4xl mt-6 mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">Notre méthodologie</h1>
+              <p className="text-base md:text-lg">
+                Créer une équipe pour votre projet c'est bien, avoir une organisation
+                sans faille c'est mieux. Pourquoi ? Pour gagner en productivité, en
+                temps et en ébullition d'idées.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-              <div className="text-center">
-                <div className="mb-4">
-                  <img
-                    src={img16}
-                    alt="Ateliers"
-                    className="mx-auto animate-bounce"
-                  />
+            <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 md:grid-cols-3">
+              {icons.map((item, index) => (
+                <div key={index} className="text-center">
+                  <div className="mb-4">
+                    <img src={item.icon} alt="icons" className="mx-auto animate-bounce" />
+                  </div>
+                  <h2 className="text-xl font-bold">{item.title}</h2>
+                  <p className="mt-2">{item.description}</p>
                 </div>
-                <h2 className="text-xl font-bold">Ateliers</h2>
-                <p className="mt-2">
-                  Qui vont nous permettre d'échanger, de débattre, de proposer,
-                  de co-créer et de valider.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4">
-                  <img
-                    src={img15}
-                    alt="Figjam"
-                    className="mx-auto animate-bounce"
-                  />
-                </div>
-                <h2 className="text-xl font-bold">Figjam</h2>
-                <p className="mt-2">
-                  Pour itérer sur votre projet, Figjam est un grand tableau
-                  blanc digital : Brainstorming, idées.. vous allez adorer
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4">
-                  <img
-                    src={img14}
-                    alt="Figma"
-                    className="mx-auto animate-bounce"
-                  />
-                </div>
-                <h2 className="text-xl font-bold">Figma</h2>
-                <p className="mt-2">
-                  Pour imaginer ensemble le design et l'expérience de votre
-                  projet, Figma est l'outil que nous privilégions.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4">
-                  <img
-                    src={img12}
-                    alt="Développement"
-                    className="mx-auto animate-bounce"
-                  />
-                </div>
-                <h2 className="text-xl font-bold">Développement</h2>
-                <p className="mt-2">
-                  Pour développer vos sites et applications nous favorisons :
-                  Webflow, Bubble, Adalo, Shopify et Wordpress.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4">
-                  <img
-                    src={img13}
-                    alt="Asana"
-                    className="mx-auto animate-bounce"
-                  />
-                </div>
-                <h2 className="text-xl font-bold">Asana</h2>
-                <p className="mt-2">
-                  Pour la gestion de votre projet : planning, tâches, ticketing,
-                  gestion d'équipe, Asana est un indispensable.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+        
       <div className="flex flex-col w-full bg-black text-white mt-2 p-8">
         <div className="flex flex-wrap justify-between items-center h-full ">
           <div className="my-6 w-full sm:w-1/2 pl-24 pr-16 ">
@@ -271,11 +218,12 @@ const Home = () => {
            <img src={img017} alt="" className="w-6"/>
            <img src={img018} alt="" className="w-6"/>
            <img src={img019} alt="" className="w-2"/>
-          </div>
-          </div>
+        </div>
+      </div>
 
-    </div>
-  );
-};
+</div>
+  )
+  }
+ 
 
 export default Home;
